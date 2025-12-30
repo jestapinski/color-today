@@ -29,26 +29,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <head>
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-J4QMC7WT6T"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5085814365069072"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
           crossOrigin="anonymous"
         />
-        <Script id="gtag-init" strategy="afterInteractive">
+        <Script id="gtag-init" strategy="beforeInteractive">
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-J4QMC7WT6T');`}
         </Script>
-        {children}
-      </body>
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
