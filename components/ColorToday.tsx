@@ -23,6 +23,7 @@ type Shape = {
 const DAILY_SHAPES = 28;
 const STORAGE_PREFIX = "color-today::v1";
 const DEFAULT_COLOR = "#f0643a";
+const SHARE_URL = "https://color-today.com";
 const PALETTE = [
   "#f0643a",
   "#f6b83f",
@@ -191,13 +192,13 @@ export default function ColorToday() {
   const [fills, setFills] = useState<Record<string, string>>({});
   const [currentColor, setCurrentColor] = useState(DEFAULT_COLOR);
   const [canvasSize, setCanvasSize] = useState(640);
-  const [shareUrl, setShareUrl] = useState("");
+  const [shareUrl, setShareUrl] = useState(SHARE_URL);
   const paintingRef = useRef(false);
   const lastHitRef = useRef<string | null>(null);
 
   useEffect(() => {
     setDateKey(getLocalDateKey());
-    setShareUrl(window.location.href);
+    setShareUrl(window.location.href || SHARE_URL);
     const interval = setInterval(() => {
       setDateKey((prev) => {
         const next = getLocalDateKey();
@@ -262,8 +263,8 @@ export default function ColorToday() {
     const dpr = window.devicePixelRatio || 1;
     canvas.width = canvasSize * dpr;
     canvas.height = canvasSize * dpr;
-    canvas.style.width = `${canvasSize}px`;
-    canvas.style.height = `${canvasSize}px`;
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
 
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, canvasSize, canvasSize);
@@ -365,7 +366,8 @@ export default function ColorToday() {
     if (navigator.canShare?.({ files: [file] })) {
       await navigator.share({
         title: "color today",
-        text: "Here is my color today canvas",
+        text: `Here is my color today canvas. Color yours at ${SHARE_URL}`,
+        url: SHARE_URL,
         files: [file]
       });
       return;
@@ -386,7 +388,7 @@ export default function ColorToday() {
   };
 
   const shareText = encodeURIComponent(
-    "I colored today\'s abstract canvas on color today"
+    `I colored today\'s abstract canvas on color today. Join in at ${SHARE_URL}`
   );
   const shareLink = encodeURIComponent(shareUrl);
 
