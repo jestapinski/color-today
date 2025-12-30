@@ -5,21 +5,34 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "color today",
   description:
-    "A daily abstract coloring canvas. Pick a color, tap a shape, and share your creation.",
+    "A daily abstract coloring canvas for calm, playful moments. Tap a shape, pick a hue, and share your take on today.",
   applicationName: "color today",
   keywords: ["coloring", "daily", "abstract", "canvas", "art"],
+  metadataBase: new URL("https://color-today.com"),
   openGraph: {
     title: "color today",
     description:
-      "A daily abstract coloring canvas. Pick a color, tap a shape, and share your creation.",
-    type: "website"
+      "Daily abstract coloring for calm, playful moments. Tap a shape, pick a hue, and share your take on today.",
+    type: "website",
+    url: "https://color-today.com",
+    siteName: "color today",
+    images: [
+      {
+        url: "/og.svg",
+        width: 1200,
+        height: 630,
+        alt: "color today preview"
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     title: "color today",
     description:
-      "A daily abstract coloring canvas. Pick a color, tap a shape, and share your creation."
-  }
+      "Daily abstract coloring for calm, playful moments. Tap a shape, pick a hue, and share your take on today.",
+    images: ["/og.svg"]
+  },
+  themeColor: "#f0643a"
 };
 
 export default function RootLayout({
