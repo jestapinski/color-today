@@ -33,15 +33,15 @@ export default function RootLayout({
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-J4QMC7WT6T"
-          strategy="beforeInteractive"
+          strategy="lazyOnload"
         />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5085814365069072"
-          strategy="beforeInteractive"
+          strategy="lazyOnload"
           crossOrigin="anonymous"
         />
-        <Script id="gtag-init" strategy="beforeInteractive">
+        <Script id="gtag-init" strategy="lazyOnload">
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
