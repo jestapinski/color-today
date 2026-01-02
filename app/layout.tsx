@@ -5,14 +5,30 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "color today",
   description:
-    "A daily abstract coloring canvas for calm, playful moments. Tap a shape, pick a hue, and share your take on today.",
+    "A daily, feel-good coloring ritual for adults and kids. Relax with playful abstract art, tap shapes, pick calming colors, and unwind with today’s canvas.",
   applicationName: "color today",
-  keywords: ["coloring", "daily", "abstract", "canvas", "art"],
+  keywords: [
+    "coloring",
+    "daily coloring",
+    "relaxing coloring",
+    "calming art",
+    "mindful coloring",
+    "stress relief",
+    "coloring app",
+    "coloring game",
+    "creative break",
+    "abstract art",
+    "coloring canvas",
+    "paint by shape",
+    "digital coloring",
+    "soothing activity",
+    "fun relaxation"
+  ],
   metadataBase: new URL("https://color-today.com"),
   openGraph: {
-    title: "color today",
+    title: "color today — a fun, relaxing daily coloring ritual",
     description:
-      "Daily abstract coloring for calm, playful moments. Tap a shape, pick a hue, and share your take on today.",
+      "Unwind with a playful, calming coloring canvas every day. Tap shapes, choose soothing hues, and enjoy a mindful creative break.",
     type: "website",
     url: "https://color-today.com",
     siteName: "color today",
@@ -27,9 +43,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "color today",
+    title: "color today — fun, calming daily coloring",
     description:
-      "Daily abstract coloring for calm, playful moments. Tap a shape, pick a hue, and share your take on today.",
+      "Relax with a new abstract coloring canvas every day. Tap shapes, pick soothing colors, and take a mindful break.",
     images: ["/og.svg"]
   },
   themeColor: "#f0643a"
