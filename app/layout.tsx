@@ -32,9 +32,6 @@ export const metadata: Metadata = {
       "Daily abstract coloring for calm, playful moments. Tap a shape, pick a hue, and share your take on today.",
     images: ["/og.svg"]
   },
-  icons: {
-    icon: "/favicon.ico"
-  },
   themeColor: "#f0643a"
 };
 
